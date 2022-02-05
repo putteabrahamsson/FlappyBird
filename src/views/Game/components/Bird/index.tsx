@@ -18,7 +18,7 @@ const Bird: FC<Props> = ({ gameOver }) => {
     x: BirdSettings.startPosition,
   });
 
-  let gameTimerId;
+  let birdMovementId;
 
   useEffect(() => {
     const oldPosition = position;
@@ -29,7 +29,7 @@ const Bird: FC<Props> = ({ gameOver }) => {
           BirdSettings.birdSize / 2 &&
       !paused
     ) {
-      gameTimerId = setInterval(() => {
+      birdMovementId = setInterval(() => {
         const newPosition = {
           x: oldPosition.x,
           y: oldPosition.y + BirdSettings.gravity,
@@ -39,10 +39,10 @@ const Bird: FC<Props> = ({ gameOver }) => {
       }, 30);
 
       return () => {
-        clearInterval(gameTimerId);
+        clearInterval(birdMovementId);
       };
     } else if (paused) {
-      console.log('paused bird');
+      clearInterval(birdMovementId);
     } else {
       setPaused();
       gameOver();
@@ -57,8 +57,6 @@ const Bird: FC<Props> = ({ gameOver }) => {
       obstaclePosY?.bottomObstacle;
     const topObstacle = obstaclePosY?.topObstacle;
 
-    console.log(maxX);
-    console.log(obstaclePosX);
     if (obstaclePosX < maxX && obstaclePosX > maxX - 70) {
       if (
         position.y > topObstacle &&

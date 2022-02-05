@@ -25,7 +25,7 @@ const GameOver: FC<Props> = ({ score }) => {
           style={styles.button}
           onPress={goBack}>
           <Text style={styles.buttonText}>
-            Restart game
+            Return to main menu
           </Text>
         </TouchableOpacity>
       </View>
@@ -45,19 +45,21 @@ const styles = StyleSheet.create({
   box: {
     width: '90%',
     borderRadius: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'green',
     alignItems: 'center',
   },
   title: {
+    color: 'white',
     fontSize: 40,
   },
   subTitle: {
+    color: 'white',
     fontSize: 20,
   },
   button: {
     width: '100%',
     height: 70,
-    backgroundColor: 'black',
+    backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,

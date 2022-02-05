@@ -7,4 +7,7 @@ export const lobbyButtons = [
       route: Routes.GAME_STACK,
     },
   },
+  {
+    title: 'Scoreboard',
+  },
 ];

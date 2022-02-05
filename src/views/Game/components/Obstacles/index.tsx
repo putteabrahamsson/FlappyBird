@@ -70,7 +70,6 @@ const Obstacle: FC<Props> = ({ passedObstacle }) => {
         clearInterval(obstacleTimer);
       };
     } else if (paused) {
-      console.log('paused obstacle');
       clearInterval(obstacleTimer);
     } else {
       passedObstacle();

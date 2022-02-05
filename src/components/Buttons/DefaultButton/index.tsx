@@ -29,12 +29,14 @@ const styles = StyleSheet.create({
   wrapper: {
     width: '100%',
     height: 75,
-    backgroundColor: 'orange',
+    backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 5,
   },
   text: {
     fontSize: 20,
+    color: 'white',
   },
 });
 
